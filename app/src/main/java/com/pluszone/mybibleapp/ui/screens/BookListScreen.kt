@@ -20,8 +20,6 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.pluszone.mybibleapp.Screen
-import com.pluszone.mybibleapp.data.model.Book
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
