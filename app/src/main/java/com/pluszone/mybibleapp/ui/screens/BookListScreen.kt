@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun BookListScreen(
     books: List<String>,
-    onBookClick: (Int) -> Unit,
+    onBookClick: (Int, String) -> Unit,
     onSearchClick : () -> Unit
 ) {
     Scaffold(
@@ -43,16 +43,16 @@ fun BookListScreen(
                 .padding(innerPadding)
                 .fillMaxSize()
         ) {
-            itemsIndexed(books) { index, book ->
+            itemsIndexed(books) { index, bookName ->
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(8.dp)
-                        .clickable { onBookClick(index) },
+                        .clickable { onBookClick(index, bookName) },
                     elevation = CardDefaults.cardElevation(4.dp)
                 ) {
                     Text(
-                        text = book,
+                        text = bookName,
                         modifier = Modifier.padding(16.dp),
                         style = MaterialTheme.typography.titleMedium
                     )

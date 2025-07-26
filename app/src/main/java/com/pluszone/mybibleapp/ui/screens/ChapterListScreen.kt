@@ -15,17 +15,17 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.pluszone.mybibleapp.ui.uiUtil.TopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ChapterListScreen(
+    title: String,
     chapters: List<String>,
     onChapterClick: (String) -> Unit
 ) {
     Scaffold(
-        topBar = {
-            TopAppBar(title = { Text("Select Chapter") })
-        }
+        topBar = {TopBar(title = title)},
     ) { innerPadding ->
         LazyColumn(modifier = Modifier.padding(innerPadding)) {
             items(chapters) { chapter ->

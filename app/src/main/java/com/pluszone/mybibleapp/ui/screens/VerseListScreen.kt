@@ -17,18 +17,19 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.pluszone.mybibleapp.ui.uiUtil.TopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun VerseListScreen(
+    title: String,
     verses: List<Pair<String, String>>,
     highlighted: Set<String> = emptySet(),
     onVerseClick: ((String) -> Unit)? = null
 ) {
     Scaffold(
-        topBar = {
-            TopAppBar(title = { Text("Verses") })
-        }
+        topBar =  {TopBar(title = title)}
+
     ) { innerPadding ->
         LazyColumn(
             modifier = Modifier
